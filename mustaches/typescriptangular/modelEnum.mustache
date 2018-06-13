@@ -1,0 +1,14 @@
+export enum {{name}} {
+    {{#vendorExtensions}}
+    {{#vendorExtensions.x-ms-enum.values}}
+    {{name}} = {{value}}{{^-last}},{{/-last}}
+    {{/vendorExtensions.x-ms-enum.values}}
+    {{/vendorExtensions}}
+    {{^vendorExtensions}}
+    {{#allowableValues}}
+    {{#enumVars}}
+    {{{name}}}{{^-last}},{{/-last}}
+    {{/enumVars}}
+    {{/allowableValues}}
+    {{/vendorExtensions}}
+}
